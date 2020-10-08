@@ -9,7 +9,6 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 local lain = require("lain")
---local menubar       = require("menubar")
 local freedesktop = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
@@ -30,8 +29,8 @@ naughty.config.defaults = {
     margin = "5",
     border_width = "1",
     position = "top_right",
-    width = 300,
-    max_width = 450
+    width = 400,
+    max_width = 400
 }
 
 -- DBUS Notification constants
@@ -41,7 +40,7 @@ local urgency = {
     critical = "\2"
 }
 
---to test notification 
+--to test notification
 --naughty.notify({ title = "Achtung!", text = "You're idling", timeout = 0 })
 
 
@@ -107,10 +106,19 @@ awful.spawn.with_shell(
 -- {{{ Variable definitions
 
 local themes = {
-    "multicolor",
+    "blackburn", -- 1
+    "copland", -- 2
+    "dremora", -- 3
+    "holo", -- 4
+    "multicolor", -- 5
+    "powerarrow", -- 6
+    "powerarrow-dark", -- 7
+    "rainbow", -- 8
+    "steamburn", -- 9
+    "vertex" -- 10
 }
 -- my theme no 5
-local chosen_theme = themes[1]
+local chosen_theme = themes[5]
 local modkey = "Mod4"
 local altkey = "Mod1"
 local terminal = "alacritty"
@@ -398,6 +406,19 @@ globalkeys =
         end,
         {description = "go forth", group = "client"}
     ),
+   -- Show/Hide Wibox
+    awful.key(
+        { modkey },
+         "w",
+         function ()
+          for s in screen do
+                s.mywibox.visible = not s.mywibox.visible
+                if s.mybottomwibox then
+                    s.mybottomwibox.visible = not s.mybottomwibox.visible
+                end
+            end
+        end,
+        {description = "toggle wibox", group = "awesome"}),
     -- Launch Firefox
     awful.key(
         {modkey},
@@ -407,7 +428,7 @@ globalkeys =
         end,
         {description = "launch firefox", group = "browser"}
     ),
-    -- Launch Clipmenu 
+    -- Launch Clipmenu
     awful.key(
         {modkey},
         "a",
@@ -434,7 +455,7 @@ globalkeys =
         end,
         {description = "take screenshots", group = "custom"}
     ),
-    -- lockscreen 
+    -- lockscreen
     awful.key(
         { modkey },
         "l",
