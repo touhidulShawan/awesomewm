@@ -106,19 +106,10 @@ awful.spawn.with_shell(
 -- {{{ Variable definitions
 
 local themes = {
-    "blackburn", -- 1
-    "copland", -- 2
-    "dremora", -- 3
-    "holo", -- 4
-    "multicolor", -- 5
-    "powerarrow", -- 6
-    "powerarrow-dark", -- 7
-    "rainbow", -- 8
-    "steamburn", -- 9
-    "vertex" -- 10
+    "multicolor"
 }
 -- my theme no 5
-local chosen_theme = themes[5]
+local chosen_theme = themes[1]
 local modkey = "Mod4"
 local altkey = "Mod1"
 local terminal = "alacritty"
@@ -127,7 +118,7 @@ local cycle_prev = true -- cycle trough all previous client or just the first --
 local editor = os.getenv("nvim") or "nvim"
 local gui_editor = os.getenv("code") or "gvim"
 local browser = os.getenv("BROWSER") or "firefox"
-local scrlocker = "slock"
+local scrlocker = "betterlockscreen "
 
 awful.util.terminal = terminal
 awful.util.tagnames = {" HOME ", " CODE ", " BROWSE ", " WORKSPACE ", " DISK "}
@@ -1028,7 +1019,7 @@ awful.rules.rules = {
     -- Titlebars
     {
         rule_any = {type = {"dialog", "normal"}},
-        properties = {titlebars_enabled = true}
+        properties = {titlebars_enabled = false}
     },
     -- Set Firefox to always map on the first tag on screen 1.
     {
