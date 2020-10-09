@@ -455,6 +455,15 @@ globalkeys =
         end,
         {description = "take screenshots", group = "custom"}
     ),
+    -- Escrotum Screenshots
+    awful.key(
+         {"Shift" },
+         "Print",
+         function()
+           awful.util.spawn("escrotum -s")
+         end,
+         {description = "take screenshots by select", group = "custom"}
+    ),
     -- lockscreen
     awful.key(
         { modkey },
@@ -793,7 +802,7 @@ globalkeys =
         function()
             os.execute(
                 string.format(
-                    "dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
+                    "dmenu_run -c -l 15 -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
                     beautiful.bg_normal,
                     beautiful.fg_normal,
                     beautiful.bg_focus,
