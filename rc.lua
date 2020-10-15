@@ -121,7 +121,7 @@ local browser = os.getenv("BROWSER") or "firefox"
 local scrlocker = "betterlockscreen "
 
 awful.util.terminal = terminal
-awful.util.tagnames = {" HOME ", " CODE ", " BROWSE ", " WORKSPACE ", " DISK "}
+awful.util.tagnames = {" HOME ", " BROWSE ", " CODE ", " WORKSPACE ", " DISK "}
 awful.layout.layouts = {
     --awful.layout.suit.floating,
     awful.layout.suit.tile
@@ -639,16 +639,6 @@ globalkeys =
             end
         end,
         {description = "show filesystem", group = "widgets"}
-    ),
-    awful.key(
-        {altkey},
-        "w",
-        function()
-            if beautiful.weather then
-                beautiful.weather.show(7)
-            end
-        end,
-        {description = "show weather", group = "widgets"}
     ),
     -- Brightness
     awful.key(
