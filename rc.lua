@@ -464,6 +464,15 @@ globalkeys =
         end,
         {description = "Lockscreen", group= "custom"}
    ),
+   -- launch emoji
+   awful.key(
+        { modkey },
+        ".",
+        function()
+            awful.util.spawn("ibus emoji")
+        end,
+        {description = "launch emoji", group = "custom"}
+   ),
     -- On the fly useless gaps change
     awful.key(
         {altkey, "Control"},
