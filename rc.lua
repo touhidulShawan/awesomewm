@@ -90,7 +90,7 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({"urxvtd", "unclutter -root"}) -- entries must be separated by commas
+run_once({"unclutter -root"}) -- entries must be separated by commas
 
 -- This function implements the XDG autostart specification
 --[[
@@ -103,11 +103,10 @@ awful.spawn.with_shell(
 --]]
 -- }}}
 
--- {{{ Variable definitions
-
 local themes = {
     "multicolor"
 }
+
 -- my theme no 5
 local chosen_theme = themes[1]
 local modkey = "Mod4"
@@ -1075,7 +1074,6 @@ client.connect_signal(
         c.border_color = beautiful.border_normal
     end
 )
-
 -- }}}
 --
 -- Autostart
