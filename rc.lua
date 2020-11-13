@@ -120,7 +120,7 @@ local browser = os.getenv("BROWSER") or "firefox"
 local scrlocker = "betterlockscreen "
 
 awful.util.terminal = terminal
-awful.util.tagnames = {" HOME ", " BROWSE ", " CODE ", " WORKSPACE ", " DISK "}
+awful.util.tagnames = {" HOME ", " BROWSER ", " CODE ", " TERMINAL ", " WORKSPACE ", " MEDIA "}
 awful.layout.layouts = {
     --awful.layout.suit.floating,
     awful.layout.suit.tile
