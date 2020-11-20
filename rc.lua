@@ -423,9 +423,9 @@ globalkeys =
         {modkey},
         "a",
         function()
-            awful.util.spawn("clipmenu")
+            awful.util.spawn("clipster -sp")
         end,
-        {description = "launch clipmenu", group = "custom"}
+        {description = "launch clipster", group = "custom"}
     ),
     -- Launch pcmanfm
     awful.key(
@@ -1080,4 +1080,3 @@ client.connect_signal(
 awful.spawn.with_shell("picom --config  $HOME/.config/picom/picom.conf")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-applet")
---awful.spawn.with_shell("clipmenud")
