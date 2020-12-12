@@ -18,7 +18,7 @@ local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = theme.confdir .. "/wall.png"
 theme.font                                      = "MesloLGS NF Regular 11"
-theme.taglist_font                              = "JetBrains Mono Regular 10"
+theme.taglist_font                              = "JetBrains Mono Regular 11"
 theme.menu_bg_normal                            = "#272835"
 theme.menu_bg_focus                             = "#000000"
 theme.bg_normal                                 = "#343551"
@@ -190,16 +190,16 @@ local bat = lain.widget.bat({
 })
 
 -- ALSA volume
-local volicon = wibox.widget.imagebox(theme.widget_vol)
-theme.volume = lain.widget.alsa({
-    settings = function()
-        if volume_now.status == "off" then
-            volume_now.level = volume_now.level .. "M"
-        end
-
-        widget:set_markup(markup.fontfg(theme.font, "#7493d2", volume_now.level .. "% "))
-    end
-})
+--local volicon = wibox.widget.imagebox(theme.widget_vol)
+--theme.volume = lain.widget.alsa({
+--    settings = function()
+--        if volume_now.status == "off" then
+--            volume_now.level = volume_now.level .. "M"
+--        end
+--
+--        widget:set_markup(markup.fontfg(theme.font, "#7493d2", volume_now.level .. "% "))
+--    end
+--})
 
 -- Net
 --local netdownicon = wibox.widget.imagebox(theme.widget_netdown)
@@ -310,8 +310,8 @@ function theme.at_screen_connect(s)
             --netdowninfo,
             --netupicon,
             --netupinfo.widget,
-            volicon,
-            theme.volume.widget,
+            --volicon,
+            --theme.volume.widget,
             memicon,
             memory.widget,
             --cpuicon,

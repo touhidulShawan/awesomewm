@@ -418,15 +418,6 @@ globalkeys =
         end,
         {description = "launch firefox", group = "browser"}
     ),
-    -- Launch Clipmenu
-    awful.key(
-        {modkey},
-        "a",
-        function()
-            awful.util.spawn("clipster -sp")
-        end,
-        {description = "launch clipster", group = "custom"}
-    ),
     -- Launch pcmanfm
     awful.key(
         {modkey},
@@ -791,7 +782,7 @@ globalkeys =
         function()
             os.execute(
                 string.format(
-                    "dmenu_run -c -l 15 -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
+                    "dmenu_run -c -l 15 -i -fn 'JetBrains Mono' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
                     beautiful.bg_normal,
                     beautiful.fg_normal,
                     beautiful.bg_focus,
@@ -1079,4 +1070,6 @@ client.connect_signal(
 -- Autostart
 awful.spawn.with_shell("picom --config  $HOME/.config/picom/picom.conf")
 awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("blueman-applet")
+awful.spawn.with_shell("pa-applet")
 awful.spawn.with_shell("nm-applet")
