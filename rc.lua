@@ -1071,5 +1071,4 @@ client.connect_signal(
 awful.spawn.with_shell("picom --config  $HOME/.config/picom/picom.conf")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("blueman-applet")
-awful.spawn.with_shell("pa-applet")
 awful.spawn.with_shell("nm-applet")
